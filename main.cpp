@@ -1,19 +1,46 @@
-#include "mbed.h"           //includes the mbed library
+#include "mbed.h"
 
-DigitalOut greenLED(LED1);  //creates an object called greenLED which is assigned to LED1 (PB_0) as a digital output
+// Create a DigitalOut “object” called greenLED. Pass constant LED1 as a “parameter”
+DigitalOut greenLED(LED1);
 
-int main()
+//These are "commented out" and so are not part of the program. You can uncomment them by removing the // characters
+//Your task is to make a sequence alternating between Green+Red and just Blue 
+DigitalOut blueLED(LED2);
+DigitalOut redLED(LED3);
+
+
+//The main function - all executable C / C++ applications have a main function. This is our entry point in the software
+int main() 
 {
-    while (true) {          //while current perameters stay the same the loop will repeat itself
+    // ALL the repeating code is contained in a  “while loop”
+    while(true) 
+    { 
+        //The code between the { curly braces } is the code that is repeated forever
 
-        greenLED = 1;       //sets power to ON causing LED1 to turn on
+        // Turn onboard LEDs ON  
+        greenLED = 1; 
+        redLED = 1;
 
-        wait_us(100000);    //waits 1 second before continuing
+        // Wait 1 second (1 million microseconds)
+        wait_us(1000000); 
 
-        greenLED = 0;       //sets power to OFF causing the LED to turn off
+        // Turn LEDs OFF
+        greenLED = 0;
+        redLED = 0;
 
-        wait_us(1000000);   //waits 1 second
-    
+        // Wait 1 second
+        wait_us(1000000); 
+
+        // Turns blue LED on
+        blueLED = 1;
+
+        wait_us(1000000); 
+
+        // Turns blue LED off
+        blueLED = 0;
+
+        wait_us(1000000); 
+        
     }
 }
 
