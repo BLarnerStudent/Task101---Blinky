@@ -1,0 +1,13 @@
+Task101-2
+
+
+Now calculate a suitable current limiting resistor value for the RED and AMBER LEDs in your kit. The data is below
+
+Colour	current (approx.)	Voltage
+RED	    2mA	                1.7V
+AMBER	  2mA	               1.85V
+
+V = IR rearranged to V/I = R
+
+RED   - 1.7 V/0.02 Amps = 85 Ohms
+AMBER - 1.85 V/0.02 Amps = 92.5 Ohms
